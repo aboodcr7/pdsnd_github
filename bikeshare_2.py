@@ -17,7 +17,7 @@ def get_filters():
     print('Welcome to my humble code!!! Let\'s start by exploring some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
-        city = str(input('Select a city from the following: New York City, Chicago and Washington. \n')).lower()
+        city = str(input('Choose a city from the following: New York City, Chicago and Washington. \n')).lower()
         if city not in cities:
             print('Please enter a valid city name')
         else:
@@ -135,7 +135,6 @@ def user_stats(df):
        
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('*'*60)
-
 def view_data(df):
     start=0
     more=input('\nDo you want to view the data? Enter yes or no.\n')
@@ -148,7 +147,6 @@ def view_data(df):
             start = num
         except ValueError:
             print('Enter an integer value')    
-    
 def main():
     while True:
         city, month, day = get_filters()
@@ -157,11 +155,9 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        view_data(df)
-    
+        view_data(df) 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 if __name__ == "__main__":
 	main()
